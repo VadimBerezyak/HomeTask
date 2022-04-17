@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class CustomStack {
 
-    private static final Object customNull = "SUPERNULL";
-    private static Object[] sourceArray = {null};
-    private static Object[] resultArray = new Object[sourceArray.length];
+    private static final Object customNull = "SUPERNULL";                    // customNull
+    private static Object[] sourceArray = {null};                            // массив для добавления элемента
+    private static Object[] resultArray = new Object[sourceArray.length];    // копия массива
 
     public static void main(String[] args) {
         addElement("123", customNull, sourceArray);
@@ -12,7 +12,7 @@ public class CustomStack {
 
     public static void addElement(Object str, Object customNull, Object[] sourceArray) {
         for (int i = 0; i < sourceArray.length; i++) {
-            resultArray[i] = sourceArray[i];
+            resultArray[i] = sourceArray[i];                                  // метод добавления элемента
         }
         if (sourceArray[sourceArray.length - 1] != customNull && sourceArray[sourceArray.length - 1] != null) {
             Object[] resultArray = new Object[(int) Math.ceil(sourceArray.length * 1.5)];
