@@ -1,31 +1,47 @@
 import java.util.Arrays;
 
 public class CustomStack {
+    private static Object customNull = "Super";
     public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-            addElement(String.valueOf(i));
-        }
+addElement("123", "Super");
     }
 
-    private static String[] sourceArray = new String[1];
+    private static Object[] sourceArray = {23, 123, 123, 123, 123, 123, "Super", null};
 
-    public static void addElement(String str) {
-        if (sourceArray[sourceArray.length - 1] != null) {
-            String[] resultArray = new String[(int) Math.ceil(sourceArray.length * 1.5)];
-            System.arraycopy(sourceArray, 0, resultArray, 0, sourceArray.length);
+    public static void addElement(Object str, Object customNull) {
+
+        if (sourceArray[sourceArray.length - 1] != customNull && sourceArray[sourceArray.length - 1] != null) {
+            Object[] resultArray = new Object[(int) Math.ceil(sourceArray.length * 1.5)];
+            for (int i = 0; i <sourceArray.length ; i++) {
+                resultArray[i] = sourceArray[i];
+            }
             resultArray[sourceArray.length] = str;
+            if( resultArray[resultArray.length -1] == null) {
+                resultArray[sourceArray.length+1] = customNull;
+            }
             sourceArray = resultArray;
             System.out.println(Arrays.toString(sourceArray));
-        }else {
+        }else if(sourceArray[sourceArray.length - 1] == customNull){
+
+                    sourceArray[sourceArray.length-1] = str;
+            System.out.println(Arrays.toString(sourceArray));
+
+            }
+        else if(sourceArray[sourceArray.length - 1] == null){
             for (int i = 0; i < sourceArray.length; i++) {
-                if (sourceArray[i] == null) {
+                if (sourceArray[i] == customNull){
                     sourceArray[i] = str;
+                    sourceArray[i+1] = customNull;
                     break;
                 }
             }
+
+            System.out.println(Arrays.toString(sourceArray));
+
+        }
         }
     }
-}
+
 
 
 
