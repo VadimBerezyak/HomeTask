@@ -12,15 +12,17 @@ public class Main {
 //        System.out.println(customStack1);
 
         // test resize array
+//        CustomStack1 customStack1 = new CustomStack1();
+//        for (Integer i = 0; i < 10; i++) {
+//            customStack1.add(i);
+//        }
         CustomStack1 customStack1 = new CustomStack1();
-        for (Integer i = 0; i < 50; i++) {
+        Object b = new Object();
+        b = "2";
+        for (Integer i = 0; i < 5; i++) {
             customStack1.add(i);
         }
-        Integer a = 5;
-        customStack1.add(a);
-       // customStack1.pop(2);
-
-        customStack1.popByValue(5);
-
+        customStack1.add("2");
+        customStack1.get(b);
     }
 }

@@ -17,8 +17,8 @@ public class CustomStack1 {
         if (lastindex == array.length) {
             resize();
         }
-        this.array[lastindex] = element;
-        this.lastindex++;
+        array[lastindex] = element;
+        lastindex++;
     }
 
     private void resize() {
@@ -43,13 +43,32 @@ public class CustomStack1 {
         }
     }
 
-    public void popByValue(Object element) {
+    public void pop(Object element) {
         for (int i = 0; i < lastindex; i++) {
-            if (array[i].equals(element) || array[i] == null ) {
+            if (array[i].equals(element) || array[i] == null) {
                 pop(i);
             }
 
         }
     }
 
+    public void get(int index) {
+        if (index >= 0 && index < lastindex) {
+            System.out.println(array[index]);
+        } else throw new IndexOutOfBoundsException();
+    }
+
+    public void get(Object value) {
+        boolean flag = true;
+        for (int i = 0; i < lastindex; i++) {
+            if (array[i].equals(value)) {
+                System.out.println(i + " - is index of element of member with your's value in the array");
+                flag = false;
+            }
+        }
+        if (flag) {
+            System.out.println("Try again, body");
+        }
+
+    }
 }
