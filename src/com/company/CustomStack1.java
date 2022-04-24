@@ -43,4 +43,13 @@ public class CustomStack1 {
         }
     }
 
+    public void popByValue(Object element) {
+        for (int i = 0; i < lastindex; i++) {
+            if (array[i].equals(element) || array[i] == null ) {
+                pop(i);
+            }
+
+        }
+    }
+
 }

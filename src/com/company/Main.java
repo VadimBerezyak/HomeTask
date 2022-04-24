@@ -16,8 +16,11 @@ public class Main {
         for (Integer i = 0; i < 50; i++) {
             customStack1.add(i);
         }
-        customStack1.pop(2);
-        customStack1.pop(48);
+        Integer a = 5;
+        customStack1.add(a);
+       // customStack1.pop(2);
+
+        customStack1.popByValue(5);
 
     }
 }
