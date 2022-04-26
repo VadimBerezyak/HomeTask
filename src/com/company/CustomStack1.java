@@ -6,7 +6,7 @@ public class CustomStack1 {
     }
 
     Object[] array;
-    private int lastindex;
+    public int lastindex;
 
     public CustomStack1() {
         this.array = new Object[10];
