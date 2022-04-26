@@ -64,13 +64,13 @@ public class CustomStack1 {
         int index = -1;
         for (int i = 0; i < lastindex; i++) {
             if (array[i].equals(value)) {
-                System.out.println(i + " - is index of element of member with your's value in the array");
+    //            System.out.println(i + " - is index of element of member with your's value in the array");
                 index = i;
                 flag = false;
             }
         }
         if (flag) {
-            System.out.println("Try again, body");
+            System.out.println("Try again");
         }
         return index;
     }

@@ -1,8 +1,8 @@
 package com.company;
 
 public class CustomMap {
-    private CustomStack1 keyStack;
-    private  CustomStack1 valueStack;
+    public CustomStack1 keyStack;
+    public  CustomStack1 valueStack;
 
 
     public CustomMap() {
@@ -13,7 +13,7 @@ public class CustomMap {
     public void get2(Object key){
         int index = keyStack.get(key);        // переделать методы из void --> int
         Object value = valueStack.get(index); // переделать методы из void --> Object
-        System.out.println(value);
+    //    System.out.println(value);
     }
 
     public void pop2(Object key){
