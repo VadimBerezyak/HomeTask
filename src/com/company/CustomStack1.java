@@ -52,23 +52,26 @@ public class CustomStack1 {
         }
     }
 
-    public void get(int index) {
+    public Object get(int index) {
         if (index >= 0 && index < lastindex) {
             System.out.println(array[index]);
         } else throw new IndexOutOfBoundsException();
+        return  array[index];
     }
 
-    public void get(Object value) {
+    public int get(Object value) {
         boolean flag = true;
+        int index = -1;
         for (int i = 0; i < lastindex; i++) {
             if (array[i].equals(value)) {
                 System.out.println(i + " - is index of element of member with your's value in the array");
+                index = i;
                 flag = false;
             }
         }
         if (flag) {
             System.out.println("Try again, body");
         }
-
+        return index;
     }
 }
